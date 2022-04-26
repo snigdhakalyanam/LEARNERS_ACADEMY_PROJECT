@@ -23,7 +23,7 @@
       </property>
       
       <property name = "hibernate.connection.password">
-         M!nty$4551
+         0
       </property>
       
       <mapping class="ClassDetails"/>
