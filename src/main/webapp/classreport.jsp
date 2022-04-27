@@ -18,7 +18,7 @@
 			String user = "root";
 			String password = "0";
 			Connection con=DriverManager.getConnection(url, user, password);
-			String query= "select c.ClassId, c.Class as ClassName, c.Room_No, c.Section, s.StudentId, s.Student_Name, s.Roll_No, t.TeacherId, t.Teacher_Name, t.Subject as Subject_Name, j.Subject_Code, j.SubjectId from Class_Details c, Student_Details s,Teacher_Details t, Subject_Details j where  s.Class = c.Class and t.Class = c.Class and j.Subject_Name = t.Subject;";
+			String query= "select c.ClassId, c.Class as ClassName, c.Room_No, c.Section, s.StudentId, s.Student_Name, s.Roll_No, t.TeacherId, t.Teacher_Name, t.Subject as Subject_Name, j.Subject_Code, j.SubjectId from Class_Details c, Student_Details s,Teacher_Details t, Subject_Details j where  s.Class = c.Class and t.Class = c.Class and j.Subject_Name = t.Subject order by ClassId, SubjectId,TeacherId, StudentId;";
 			PreparedStatement stmt=con.prepareStatement(query);
 			ResultSet rs= stmt.executeQuery();
 			if(rs.next()==false)
